@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<h2><a href="#youxu">有序列表</a>,<a href="#wuxu">无序列表</a>，<a href="#zidingyi">自定义列表</a>之间的区别</h2>
+
+	<p>
+		有序列表和无序列表之间的区别是：前缀的不同，有序的是有大写字母和小写字母、数字、罗马数字等，而无序列表是实心圆、空心圆、实心正方形。 
+	</p>
+	<p>
+		但是共同点是都有前缀。
+	</p> 
+	<p>
+		而自定义列表与有序无序的区别是没有前缀，而且是有缩进
+	</p>
+	<a name="wuxu"></a>
+	<h2>无序列表</h2>
+	<p>
+		无序列表默认的前缀样式是实心圆其实是disc，ul标签中的属性是type，type属性值有disc（实心圆默认）、circle（空心圆）、square（实心正方形）、none（取消前缀）
+	</p>
+	<h3>中国主要城市</h3>
+	<ul type="circle">
+		<li>北京</li>
+		<li>上海</li>
+		<li>广州</li>
+		<li>深圳</li>
+		<li>重庆</li>
+		<li>成都</li>
+		<!-- 添加锚点超链接 -->
+		<li><a href="#jiangsu">江苏</a></li>
+	</ul>
+
+	<a name="youxu"></a>
+	<h2>有序列表</h2>
+	<p>
+		有序列表中默认的type类型是数字，而且是从1开始的。它有两个属性：type、start。
+	</p>
+	<p>
+		type：有五个属性值：1、a、A、i、I(罗马数字)，表示列表前缀的格式；
+	</p>
+	<p>
+		start：属性值位数字，表示从type类型的第几个数字开始，有点绕，比如当你选的type=“a”,start=“3”，表示选择的是小写字母类型，从第三个字母c开始充当列表前缀。其他也是如此
+	</p>
+	<ol type="A" start="1">
+		<li>这里是有序列表的示例</li>
+		<li>和无序列表注意事项是一样的</li>
+	</ol>
+	<a name="zidingyi"></a>
+	<h2>自定义列表</h2>
+        <dl>
+            <dt>一级</dt>
+                <dd>二级</dd>
+                <dd>二级</dd>
+            <dt>一级</dt>
+                <dd>二级</dd>
+                <dd>二级</dd>
+        </dl>
+
+
+	<p>自定义列表示例</p>
+	<dl>
+		<dt>HTML语言</dt>
+		<dd>HTML语言是基本的描述文字语义的语言，负责页面的结构</dd>
+		<dd>学完html语言才能写静态页面</dd>
+
+		<dt>CSS语言</dt>
+		<dd>CSS是负责描述页面样式的语言</dd>
+		
+		<!-- 没有dd就是没有解释说明 -->
+		<dt>JavaScript</dt>
+	</dl>	
+	
+	
+
+
+	<h3>以下是多余的填充列表</h3>
+	<ul>
+		<li>
+			<h4>直辖市</h4>
+			<ul>
+				<li>北京</li>
+				<li>天津</li>
+				<li>上海</li>
+				<li>重庆</li>
+			</ul>
+		</li>
+		<li>
+			<h4>广东省</h4>
+			<ul>
+				<li>广州</li>
+				<li>深圳</li>
+				<li>东莞</li>
+				<li>珠海</li>
+				<li>佛山</li>
+			</ul>
+		</li>
+		<li>
+			<!-- 添加锚点 -->
+			<a name="jiangsu"></a>  
+			<h4>江苏省</h4>
+			<ul>
+				<li>南京</li>
+				<li>无锡</li>
+				<li>苏州</li>
+				<li>常州</li>
+				<li>扬州</li>
+			</ul>
+		</li>
+	</ul>
+
+		<ul>
+		<li>
+			<h4>直辖市</h4>
+			<ul>
+				<li>北京</li>
+				<li>天津</li>
+				<li>上海</li>
+				<li>重庆</li>
+			</ul>
+		</li>
+		<li>
+			<h4>广东省</h4>
+			<ul>
+				<li>广州</li>
+				<li>深圳</li>
+				<li>东莞</li>
+				<li>珠海</li>
+				<li>佛山</li>
+			</ul>
+		</li>
+		<li>
+			<h4>江苏省</h4>
+			<ul>
+				<li>南京</li>
+				<li>无锡</li>
+				<li>苏州</li>
+				<li>常州</li>
+				<li>扬州</li>
+			</ul>
+		</li>
+	</ul>
+
+		<ul>
+		<li>
+			<h4>直辖市</h4>
+			<ul>
+				<li>北京</li>
+				<li>天津</li>
+				<li>上海</li>
+				<li>重庆</li>
+			</ul>
+		</li>
+		<li>
+			<h4>广东省</h4>
+			<ul>
+				<li>广州</li>
+				<li>深圳</li>
+				<li>东莞</li>
+				<li>珠海</li>
+				<li>佛山</li>
+			</ul>
+		</li>
+		<li>
+			<h4>江苏省</h4>
+			<ul>
+				<li>南京</li>
+				<li>无锡</li>
+				<li>苏州</li>
+				<li>常州</li>
+				<li>扬州</li>
+			</ul>
+		</li>
+	</ul>
+
+		<ul>
+		<li>
+			<h4>直辖市</h4>
+			<ul>
+				<li>北京</li>
+				<li>天津</li>
+				<li>上海</li>
+				<li>重庆</li>
+			</ul>
+		</li>
+		<li>
+			<h4>广东省</h4>
+			<ul>
+				<li>广州</li>
+				<li>深圳</li>
+				<li>东莞</li>
+				<li>珠海</li>
+				<li>佛山</li>
+			</ul>
+		</li>
+		<li>
+			<h4>江苏省</h4>
+			<ul>
+				<li>南京</li>
+				<li>无锡</li>
+				<li>苏州</li>
+				<li>常州</li>
+				<li>扬州</li>
+			</ul>
+		</li>
+	</ul>
+
+</body>
+</html>

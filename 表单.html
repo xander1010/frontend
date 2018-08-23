@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<p>
+			姓名：
+			<input type="text" value="name"/>
+		</p>
+		<p>
+			性别：
+			<input type="radio" name="sex" id="nan"/>
+			<!-- 加上label标签让单选按钮id和for文字绑定，使点文字也可以选中 -->
+			<label for="nan">男</label>
+
+			<input type="radio" name="sex" id="nv"/>
+			<label for="nv">女</label>
+
+			<input type="radio" name="sex" id="baomi"/>
+			<label for="baomi">保密</label>
+		</p>
+		<p>
+			国籍：
+			<input type="radio" name="nationl"/>中国人
+			<input type="radio" name="nationl"/>外国人
+			
+			<!-- html5的写法 可以点文字选 -->
+			<label>
+				<input type="radio" />外星人
+			</label>
+		</p>
+		<p>
+			爱好：
+			<input type="checkbox" 	name="aihao"/>足球
+			<input type="checkbox" 	name="aihao"/>蓝球
+			<input type="checkbox" 	name="aihao" id="yumaoqiu"/>
+			<label for="yumaoqiu">羽毛球</label>
+		</p>
+		<p>
+			密码：
+			<input type="password" />
+		</p>
+
+		<p>
+			出生年份：
+			<select name="" id="">
+				<option value=""1990></option>
+				<option value="">1991</option>
+				<option value="">1992</option>
+				<option value="">1993</option>
+				<option value="">1994</option>
+			</select>
+		</p>
+		<p>
+			请输入你的意见或建议：
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+		</p>
+
+		<!-- 以下的input是html5才有的 -->
+		<p>
+			请输入你的出生日期：
+			<input type="date" />
+		</p>
+		<p>
+			请选择你喜欢的颜色：
+			<input type="color" />
+		</p>
+		<p>
+			请输入你的身高：
+			<input type="range" min="100" max="200"/>
+		</p>
+
+		<p>
+			<input type="checkbox" 	name="aihao" id="xiyi"/>
+			<label for="xiyi">我同意以上协议规则</label>
+		</p>
+
+		<p>
+			<input type="button" value="普通按钮"/>
+			<input type="submit" value="提交"/>
+			<input type="reset" value="重置"/>
+		</p>
+
+	</form>
+
+
+</body>
+</html>
