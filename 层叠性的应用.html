@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+
+	<!-- 统一设置从div从上到下依次写，需要单独设置的再单独写 -->
+	<style type="text/css">
+
+		/*这里加了important也影响不了继承的样式*/
+		.nav{
+			color: gray !important;  
+		}
+		/*.nav ul li{
+			color: blue;
+		}*/
+		.nav ul li.no1{
+			color: red ;
+		}
+		/*.no2{
+			color: gray !important;
+		}*/
+	</style>
+</head>
+<body>
+		<div class="nav">
+			<ul>
+				<li class="no1">网站栏目</li>
+				<li class="no2">网站栏目</li>
+				<li>网站栏目</li>
+				<li>网站栏目</li>
+				<li>网站栏目</li>
+				<li>网站栏目</li>
+				<li>网站栏目</li>
+			</ul>
+		</div>
+
+
+</body>
+</html>
