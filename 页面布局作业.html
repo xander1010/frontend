@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>官网布局练习</title>
+
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.header{
+			width: 970px;
+			height: 103px;
+			margin:0 auto;
+		}
+		.header .logo{
+			float: left;
+			width: 277px;
+			height: 103px;
+			background-color: red;
+		}
+		.header .language{
+			float: right;
+			width: 137px;
+			height: 49px;
+			background-color: green;
+		}
+		.header .nav{
+			float: right;
+			width: 679px;
+			height: 46px;
+			background-color: pink;
+			margin-top: 8px;
+		}
+		.content{
+			width: 970px;
+			height: 435px;
+			margin:0 auto;
+			margin-top: 10px;
+		}
+		.content .banner{
+			float: left;
+			width: 310px;
+			height: 435px;
+			background-color: orange;
+		}
+		.content .main{
+			float: right;
+			width: 650px;
+			height: 435px;
+		}
+		.content .main .newsandhosts{
+			width: 650px;
+			height: 401px;
+		}
+		.content .main .links{
+			width: 650px;
+			height: 25px;
+			margin-top: 10px;
+			background-color: green;
+		}
+		.content .main .newsandhosts .newsbox{
+			float: left;
+			width: 450px;
+			height: 401px;
+		}
+		.content .main .newsandhosts .hosts{
+			float: right;
+			width: 190px;
+			height: 401px;
+			background-color: purple;
+		}
+		.content .main .newsandhosts .newsbox .new1{
+			height: 240px;
+			background-color: skyblue;
+		}
+		.content .main .newsandhosts .newsbox .new2{
+			margin-top: 10px;
+			height: 110px;
+			background-color: skyblue;
+		}
+		.content .main .newsandhosts .newsbox .new3{
+			margin-top: 10px;
+			height: 30px;
+			background-color: skyblue;
+		}
+		.footer{
+			width: 970px;
+			height: 35px;
+			background-color: blue;
+			margin:0 auto;
+			margin-top: 15px;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- 布局从左到右，从上到下 -->
+
+	<!-- header 网页的头部-->
+	<div class="header">
+		<div class="logo">
+			我是log
+		</div>
+		<div class="language">
+			english
+		</div>
+		<div class="nav">
+			nav就是导航条，navigater
+		</div>
+	</div>
+	<!-- content,网页的主要内容 -->
+	<div class="content">
+		<div class="banner">
+			banner
+		</div>
+		<div class="main">
+			<div class="newsandhosts">
+				<div class="newsbox">
+					<div class="new1">
+						<h3>这里是标题</h3>
+					</div>
+					<div class="new2">
+						new2
+					</div>
+					<div class="new3">
+						new3
+					</div>
+				</div>
+				<div class="hosts">
+					hosts
+				</div>
+			</div>
+			<div class="links">
+				超级链接
+			</div>
+		</div>
+	</div>
+	<!-- footer,网页的页脚 -->
+	<div class="footer">
+		footer
+	</div>
+</body>
+</html>
