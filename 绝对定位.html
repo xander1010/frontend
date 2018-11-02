@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>绝对定位</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+		}
+		.box1{
+			background-color: skyblue;
+		}
+		.box2{
+			background-color: orange;
+			position: absolute;
+			top: 100px;   /*top是以页面的左上或右上为准*/
+			left: 300px;
+			/*bottom: 100px;   用bottom时，是以首屏的左下或右下为准*/
+		}
+		.box3{
+			background-color: yellowgreen;
+			position: relative;  /*父盒子加上定位，后续的绝对定位就是以该盒子为准了*/
+		}
+		.box3 p{
+			margin:0;
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			position: absolute;
+			left: 30px;
+			top:30px;
+		}
+
+		.box4{
+			width: 200px;
+			height: 100px;
+			background-color: yellowgreen;
+			position: absolute;
+			left: 50%;
+			/*top:0;*/
+			margin-left: -100px;  /*居中后再拉回一半宽度*/
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3">
+		<p></p>
+	</div>
+
+	<div class="box4">box4</div>
+</body>
+</html>

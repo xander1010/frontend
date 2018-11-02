@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			/*background-image: url(shishi.jpg);*/
+			/*固定背景图片*/
+			background-attachment: fixed;  
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			background-image: url(./pic/1.png);
+			background-repeat: no-repeat;
+			background-repeat: repeat-x;
+			background-repeat: repeat-y;
+		}
+		div.n1{
+			width: 400px;
+			height: 400px;
+			background-image: url(./pic/2.png);
+			background-repeat: no-repeat;
+			background-position: 100px 200px;
+		}
+		div.n2{
+			width: 179px;
+			height: 150px;
+			border: 1px solid red;
+			background-image: url(./pic/3.png);
+			background-repeat: no-repeat;
+			background-position: center bottom; 
+		}
+		h3{
+			background:url(./pic/1.png) no-repeat left center;
+			padding-left: 20px;
+		}
+		/*background: yellow url() no-repeat 100px 200px fixed;*/
+/*		background-position不仅仅可以用两个数字来定位，还可以用单词来定位。
+在左右层面，我们用left、center、right来表示左、中、右
+在上下层面，我们用top、center、bottom来表示上、中、下*/
+	</style>
+</head>
+<body>
+	<div></div>
+	<div class="n1">background-position<b></b> <em></em></div>
+	<div class="n2"></div>
+	<h3>新闻</h3>
+</body>
+</html>
