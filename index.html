@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>博雅互动</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*公共类，原子类*/
+		.inner_c{
+			width: 1000px;
+			margin: 0 auto;
+		}
+		.cl{
+			clear: both;
+		}
+		.nomargin{
+			margin: 0 !important;
+		}
+		body{
+			height: 4444px;
+			font-size: 14px;
+			font-family: "Arial","Microsoft Yahei","SimSun";
+		}
+		.header{
+			/*标准流中的块级元素不写宽度自动撑满，所以可以不写width*/
+			/*也可以写上width:100%;更清晰一些。*/
+			width: 100%;
+			height: 58px;
+			background-color: #191D3A;
+		}
+		.header .logo{
+			/*浮动的盒子会自动收缩，就像一个橡皮筋套住了它，收缩到最小*/
+			/*儿子多宽，它就多宽*/
+			float: left;
+			padding: 10px 0px 0px 20px;
+		}
+ 		.header .logo h1{
+ 			width: 158px;
+ 			height: 37px;
+ 			background: url(images/logo.png);
+ 			text-indent: -999em;
+ 			overflow: hidden;
+ 		}
+ 		.header .logo h1 a{
+ 			display: block;
+ 			height: 37px;
+ 		}
+ 		.header .nav{
+ 			float: left;
+ 			width: 603px;
+ 			height: 58px;
+ 			margin-left: 47px;
+ 		}
+ 		.header .nav ul{
+ 			list-style: none;
+ 		}
+ 		.header .nav ul li{
+ 			float: left;
+ 			width: 85px;
+ 			border-right: 1px solid #252947;
+ 		}
+ 		.header .nav ul li.first{
+ 			border-left: 1px solid #252947;
+ 		}
+ 		.header .nav ul li a{
+ 			display: block;
+ 			width: 85px;
+ 			height: 58px;
+ 			text-align: center;
+ 			line-height: 58px;
+ 			text-decoration: none;
+ 			color:#818496;
+ 		}
+ 		.header .nav ul li.current a{
+ 			background-color: #252947;
+ 			color:white;
+ 		}
+ 		.header .nav ul li a:hover{
+ 			color:white;
+ 		}
+ 		.header .joinus{
+ 			float: left;
+ 			margin-left: 52px;
+ 			padding-top: 12px;
+ 		}
+ 		.header .joinus a{
+ 			display: block;
+ 			width: 98px;
+ 			height: 32px;
+ 			background-color: #38B774;
+ 			border: 1px solid #3ACA7A;
+ 			text-align: center;
+ 			line-height: 32px;
+ 			text-decoration: none;
+ 			color:white;
+ 			/*圆角*/
+ 			border-radius: 3px;
+ 		}
+ 		.header .joinus a:hover{
+ 			background-color: orange;
+ 			border-color: yellow;
+ 		}
+
+ 		.banner{
+ 			width: 100%;
+ 			height: 567px;
+ 			position: relative;
+ 		}
+ 		.banner .banner1{
+ 			height: 567px;
+ 			background: #5EC4EA url(images/banner1.jpg) no-repeat center top;
+ 		}
+ 		.banner .circles{
+ 			position: absolute;
+ 			width: 94px;
+ 			height: 13px;
+ 			left: 50%;
+ 			bottom: 19px;
+ 			margin-left: -47px;
+ 		}
+ 		.banner .circles ol{
+ 			list-style: none;
+ 		}
+		.banner .circles ol li{
+			float: left;
+			width: 12px;
+			height: 12px;
+			margin-right: 15px;
+			background: url(images/icons1.png) no-repeat -1px -3px;
+		}
+		.banner .circles ol li.cur{
+			background-position: -13px -3px;
+		}
+ 		.product{
+ 			padding-top: 50px;
+ 			height: 229px;
+ 			border-bottom: 1px solid #DBE1E7;
+ 			position: relative;
+ 		}
+ 		.product ul{
+ 			list-style: none;
+ 		}
+ 		.product ul li{
+ 			float: left;
+ 			width: 218px;
+ 			margin-right: 43px;
+ 		}
+ 		.product ul li.last{
+ 			width: 217px;
+ 			overflow: hidden;
+ 		}
+ 		.product ul li a{
+			text-decoration: none;
+			display: block;
+			padding-bottom: 12px;
+ 		}
+ 		.product ul li a:hover{
+ 			background-color: #38B774;
+ 		}
+ 		.product ul li span{
+ 			/*转成块之后，就能用text-align:center;来居中内部文字了*/
+			display: block;
+			text-align: center;
+ 		}
+ 		.product ul li span.chinese{
+ 			line-height: 40px;
+ 			color:#444866;
+ 			font-weight: bold;
+ 		}
+ 		.product ul li span.english{
+ 			font-size: 12px;
+ 			line-height: 12px;
+ 			color:#38B774;
+ 		}
+ 		.product ul li a:hover span.chinese{
+ 			color:white;
+ 		}
+ 		.product ul li a:hover span.english{
+ 			color:white;
+ 		}
+ 		.product ul li span.english b{
+ 			font-weight: normal;
+ 			padding-right: 11px;
+ 			background: url(images/arrow.png) no-repeat right center;
+ 		}
+ 		.product ul li a:hover span.english b{
+ 			background-image: url(images/arrow2.png);
+ 		}
+ 		
+ 		.product .circles{
+ 			position: absolute;
+ 			bottom: -6px;
+ 			left: 50%;
+ 			width: 117px;
+ 			height: 12px;
+ 			background-color: white;
+ 			margin-left: -59px;
+ 		}
+ 		.product ol{
+ 			padding-left: 17px;
+ 			list-style: none;
+ 		}
+ 		.product .circles ol li{
+ 			float: left;
+ 			width: 12px;
+ 			height: 12px;
+ 			background:url(images/icons1.png) no-repeat -1px -15px;
+ 			margin-right: 14px;
+ 		}
+ 		.product .circles ol li.cur{
+ 			background-position: -13px -15px;
+ 		}
+	</style>
+</head>
+<body>
+	<!-- 网页头部 -->
+	<div class="header">
+		<div class="inner_c">
+			<div class="logo">
+				<h1><a href="">博雅互动-最专业的游戏公司</a></h1>
+			</div>
+			<div class="nav">
+				<ul>
+					<li class="first current"><a href="">首页</a></li>
+					<li><a href="">博雅游戏</a></li>
+					<li><a href="">博雅新闻</a></li>
+					<li><a href="">关于我们</a></li>
+					<li><a href="">客服中心</a></li>
+					<li><a href="">投资者关系</a></li>
+					<li><a href="">校园大使</a></li>
+				</ul>
+			</div>
+			<div class="joinus">
+				<a href="">加入我们</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cl"></div>
+
+	<!-- banner -->
+	<div class="banner">
+		<div class="banner1"></div>
+		<div class="circles">
+			<ol>
+				<li class="cur"></li>
+				<li></li>
+				<li></li>
+				<li class="nomargin"></li>
+			</ol>
+		</div>
+	</div>
+
+	<div class="cl"></div>
+
+	<!-- 产品 -->
+	<div class="product inner_c">
+		<ul>
+			
+
+			<li>
+				<a href="">
+					<img src="images/pro1.png" alt="" />
+					<span class="chinese">四川麻将</span>
+					<span class="english">
+						<b>
+							SICHUAN MAHJONG
+						</b>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<img src="images/pro1.png" alt="" />
+					<span class="chinese">四川麻将</span>
+					<span class="english">
+						<b>SICHUAN</b>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<img src="images/pro1.png" alt="" />
+					<span class="chinese">四川麻将</span>
+					<span class="english">
+						<b>SICHUAN MAHJONG</b>
+					</span>
+				</a>
+			</li>
+			<li class="last nomargin">
+				<a href="">
+					<img src="images/pro1.png" alt="" />
+					<span class="chinese">四川麻将</span>
+					<span class="english">
+						<b>SICHUAN MAHJONG</b>
+					</span>
+				</a>
+			</li>
+		</ul>
+		<div class="circles">
+			<ol>
+				<li class="cur"></li>
+				<li></li>
+				<li></li>
+				<li class="nomargin"></li>
+			</ol>
+		</div>
+			
+	</div>
+</body>
+</html>
