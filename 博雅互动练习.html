@@ -191,6 +191,156 @@
 		.product .circles ol li.cur{
 			background-position: -112px -47px;
 		}
+		.information{
+			width: 100%;
+			padding-top: 53px;
+			height: 367px;
+			background: url(images/mountain.jpg) no-repeat center bottom;
+		}
+		.information .news{
+			float: left;
+			width: 500px;
+		}
+		.information .news .hd{
+			height: 120px;
+			background:url(images/news_hd.jpg) no-repeat;
+			position: relative;
+		}
+		.information .news .hd h3{
+			height: 0;
+			overflow: hidden;
+		}
+		.information .more{
+			position: absolute;
+			width: 64px;
+			height: 26px;
+			border: 1px solid #338972;
+			top: 30px;
+			left: 218px;
+			text-align: center;
+			border-radius: 4px;
+			color: #30bd72;
+			text-decoration: none;
+			font-size: 12px;
+		}
+		.information .more sup{
+			position: relative;
+			left: -1px;
+			top: -1px;
+		}
+		.information .more:hover{
+			background: #30bd72;
+			color: white;
+		}
+		.information .news ul{
+			padding:0 20px;
+			list-style: none;
+		}
+		.information .news ul li{
+			line-height: 50px;
+			border-bottom: 1px solid #dbe1e7;
+		}
+		.information .news ul li.first{
+			line-height: 35px;
+		}
+		.information .news ul li .date{
+			margin-right: 21px;
+			color: #cac4cf;
+		}
+		.information .news ul li a{
+			text-decoration: none;
+			color: #444866;
+		}
+		.information .news ul li a:hover{
+			color: #33b972;
+		}
+		.information .jobs{
+			float: left;
+			width: 500px;
+			height: 310px;
+			position: relative;
+			background: url(images/jobs_bg.jpg) no-repeat;
+		}
+		.information .jobs h3{
+			padding-top: 44px;
+			padding-left: 80px;
+		}
+		.information .jobs h3 .c{
+			display: block;
+			height: 28px;
+			font-size: 28px;
+			color: white;
+		}
+		.information .jobs h3 .e{
+			display: block;
+			font-size: 12px;
+			color: white;
+			font-weight: normal;
+			line-height: 22px;
+		}
+		.information .jobs .more{
+			border-color: white;
+			color: white;
+		}
+		.information .jobs .more:hover{
+			background-color: white;
+			color: #30bd72;
+		}
+		.information .jobs .bd{
+			padding-top: 17px;
+			padding-left: 20px;
+			padding-right: 175px;
+		}
+		.information .jobs .bd h4{
+			line-height: 22px;
+			font-size: 14px;
+			font-weight: bold;
+			color: white;
+		}
+		.information .jobs .bd ul{
+			list-style: none;
+			line-height: 37px;
+		}
+		.information .jobs .bd ul li{
+			border-bottom: 1px solid #6fdea3;
+		}
+		.information .jobs .bd ul li a{
+			color: white;
+			text-decoration: none;
+		}
+		.footer{
+			height: 91px;
+			line-height: 91px;
+			background-color: #191d3a;
+			font-size: 12px;
+		}
+		.footer .inner_c{
+			position: relative;
+		}
+		.footer .links{
+			float: left;
+		}
+		.footer a{
+			padding: 0 4px;
+			color: #818496;
+			text-decoration: none;
+		}
+		.footer a:hover{
+			color: #fff;
+		}
+		.footer span{
+			color: #818496;
+		}
+		.footer	.copyright{
+			float: right;
+			padding-right: 60px;
+		}
+		.footer .govicon{
+			width: 40px;
+			position: absolute;
+			top: 10px;
+			right: 1px;
+		}
 	</style>
 </head>
 <body>
@@ -233,7 +383,7 @@
 	</div>
 
 	<div class="c1"></div>
-
+	<!-- 产品 -->
 	<div class="product inner_c">
 		<ul>
 			<li>
@@ -270,6 +420,85 @@
 				<li></li>
 				<li class="nomargin"></li>
 			</ol>
+		</div>
+	</div>
+	
+	<div class="c1"></div>
+	<!-- 信息 -->
+	<div class="information">
+		<div class="inner_c">
+			<div class="news">
+				<div class="hd">
+					<h3>博雅新闻</h3>
+					<a href="#" class="more">MORE <sup>+</sup>
+						<!--  sup是上标 --></a>
+				</div>
+				<div class="bd">
+					<ul>
+						<li class="first">
+							<span class="date">11 / 18</span>
+							<span class="title">
+								<a href="">博雅互动义工队中秋探访敬老院，带关爱走进夕阳生活</a>
+							</span>
+						</li>
+						<li>
+							<span class="date">11 / 18</span>
+							<span class="title">
+								<a href="">博雅互动公布2018年中期业绩，巩固现有市场地位</a>
+							</span>
+						</li>
+						<li>
+							<span class="date">11 / 18</span>
+							<span class="title">
+								<a href="">博雅互动义工队中秋探访敬老院，带关爱走进夕阳</a>
+							</span>
+						</li>
+						<li>
+							<span class="date">11 / 18</span>
+							<span class="title">
+								<a href="">博雅互动公布2017全年业绩，经调整纯利增长约8.7% </a>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="jobs">
+				<div class="hd">
+					<h3>
+						<span class="c">专场招聘</span>
+						<span class="e">BOYAA JOBS</span>
+					</h3>
+					<a href="#" class="more">MORE <sup>+</sup>
+						<!--  sup是上标 --></a>
+				</div>
+				<div class="bd">
+					<h4>专场招聘岗位：</h4>
+					<ul>
+						<li><a href="#">PHP开发工程师</a></li>
+						<li><a href="#">C++开发工程师</a></li>
+						<li><a href="#">LUA开发工程师</a></li>
+						<li><a href="#">大数据开发工程师</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="c1"></div>
+	<!-- 页脚 -->
+	<div class="footer">
+		<div class="inner_c">
+			<div class="links">
+				<a href="#">网站地图</a>
+				<span>|</span>
+				<a href="#">免责声明</a>
+			</div>
+			<div class="copyright">
+				<span>
+					Copyright © 2004 - 2019 博雅互动(Boyaa Interactive)<a href="#">粤ICP备05062536号</a> 增值电信业务经营许可证：粤B2-20110513
+					<img src="images/govIcon.gif" alt="" class="govicon"/>
+				</span>
+			</div>
 		</div>
 	</div>
 </body>
