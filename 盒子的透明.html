@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 310px;
+			height: 220px;
+			border: 1px solid black;
+			position: relative;
+		}
+		.title{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 60px;
+			background-color: black;
+			opacity: 0.4;   /*透明度 0-1*/
+			filter:alpha(opacity=60); /*兼容IE6-8*/
+		}
+		span{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			color: white;
+			line-height: 60px;
+		}
+		.title:hover{
+			opacity: 0.7;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- 利用盒子透明制作图片上的标题等 -->
+	<div class="box">
+		<img src="images/jobs_bg.jpg" alt=""  style="width:310px;height:220px;"/>
+		<div class="title">这里有这也</div>
+		<span>这里是文字区域</span>
+	</div>
+</body>
+</html>
