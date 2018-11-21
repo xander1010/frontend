@@ -1,0 +1,184 @@
+
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	body{
+		background-color: #0d0105;
+		font-size: 14px;
+		font-family: "微软雅黑";
+	}
+	.header{
+		height: 100px;
+		background: url(../images/homehead.png) no-repeat center top;
+		position: relative;
+		padding-top: 12px;
+		z-index: 2;
+	}
+	.logo{
+		position: absolute;
+		width: 453px;
+		height: 280px;
+		top: 0;
+		left: 50%;
+		margin-left: -226.5px;
+	}
+	.logo h1{
+		width: 453px;
+		height: 280px;
+		background: url(../images/logo.png) no-repeat -19px 0px;
+		text-indent: -999em;
+		overflow: hidden;
+	}
+	.header .nav{
+		width: 960px;
+		height: 50px;
+		margin:0 auto;
+		position: relative;
+		z-index: 999;
+	}
+	.header .nav ul{
+		list-style: none;
+	}
+	.header .nav ul li{
+		float: left;
+		width: 113px;
+		height: 50px;
+		text-align: center;
+		line-height: 50px;
+	}
+	.header .nav ul li.no4{
+		width: 228px;
+	}
+	.header .nav ul li a{
+		display: block;
+		color: white;
+		text-decoration: none;
+	}
+	.header .nav ul li a:hover{
+		background: url(../images/icons.png) no-repeat 2px 2px;
+	}
+	.banner{
+		position: absolute;
+		overflow: hidden;
+		top: 80px;
+		left: 0;
+		/*脱离了标准流，必需要写宽和高*/
+		width: 100%;
+		height: 556px;
+	}
+	.banner .bigimg{
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left:-960px;
+	}
+	.banner .leftbtn{
+		position: absolute;
+		width: 49px;
+		height: 78px;
+		background: url(../images/icons.png) no-repeat -373px 0;
+		top: 50%;
+		margin-top: -39px;
+		left: 20px;
+		cursor: pointer;
+	}
+	.banner .leftbtn:hover{
+		background-position: -373px -104px;
+	}
+	.banner .rightbtn{
+		position: absolute;
+		width: 49px;
+		height: 78px;
+		background:  url(../images/icons.png) no-repeat -451px 0;
+		top: 50%;
+		margin-top: -39px;
+		right: 20px;
+		cursor: pointer;
+	}
+	.banner .rightbtn:hover{
+		background-position: -451px -104px;
+	}
+	.banner .b{
+		position: absolute;
+		width: 100%;
+		height: 133px;
+		background: url(../images/b.png) no-repeat center bottom;
+		bottom: 0;
+		left: 0;
+	}
+	.banner .b .box{
+		width: 540px;
+		height: 133px;
+		margin:0 auto;
+	}
+	.banner .b .box ul{
+		list-style: none;
+	}
+	.banner .b .box ul li{
+		float: left;
+		width: 180px;
+		height: 133px;
+		text-align: center;
+	}
+	.banner .b .box ul li h3{
+		line-height: 32px;
+		color: white;
+		font-size: 14px;
+		/*能见度 ，而display：none加上后相当于没写一样*/
+		visibility: hidden; 
+	}
+	.banner .b .box ul li a{
+		display: block;
+		width: 180px;
+		height: 133px;
+		text-decoration: none;
+		opacity: 0.5;
+	}
+	.banner .b .box ul li a:hover{
+		background:url(../images/icons.png) no-repeat -120px -99px; 
+		opacity: 1;
+	}
+	.banner .b .box ul li a:hover h3{
+		/*鼠标指上去时为可见*/
+		visibility: visible;
+	}
+	.footer{
+		position: absolute;
+		top: 637px;
+		width: 100%;
+		height: 140px;
+		background: url(../images/footer.jpg) no-repeat center top;
+		text-align: center;
+		color: #766970;
+		line-height: 175%;
+		font-size: 12px;
+	}
+	.footer .links{
+		width: 482px;
+		margin:0 auto;
+		padding-top: 40px;
+		overflow: hidden;
+		padding-bottom: 6px;
+	}
+	.footer .links ul{
+		list-style: none;
+	}
+	.footer .links ul li{
+		float: left;
+	}
+	.footer .links ul li a{
+		display: block;
+		padding:0 10px;
+		border-right: 1px solid #766970;
+		height: 14px;
+		line-height: 14px;
+		text-decoration: none;
+		color: #766970;
+	}
+	.footer .links ul li.last a{
+		border-right: none;
+	}
+	.footer .links ul li a:hover{
+		color: #e0e0e0;
+	}
