@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+	
+// 寻找2~100之内的所有质数
+// waiceng : 
+// for(var i = 2 ; i <= 100 ; i++){
+// 	//我们要测试i是不是质数，之前我们的算法是测试i的约数个数（不包括1和自己）
+// 	//约数个数如果为0，那么就是质数。
+// 	//凭什么我要测试约数个数？？
+// 	//只要你有约数，你就不是质数！！！！
+// 	for(var j = 2 ; j <= Math.sqrt(i) ; j++){
+// 		if(i % j == 0){
+// 			continue waiceng;	//如果这数字，被某一个数字整除了，那么立即放弃他
+// 								//开始验证下一个i
+// 		}
+// 	}
+
+// 	console.log(i);	//如果一个数字有约数，就会执行continue，就遇不见这个语句了。
+// }
+
+
+// do……while语句中没有循环变量，适合没有循环变量的情况
+// do{
+// 	var a = prompt("你到底爱不爱我？");
+// 	if(a=="爱"){
+// 		alert("me too.");
+// 		break;
+// 	}else{
+// 		alert("retry");
+// 	}
+// }while(true);
+
+// while语句是一个前置验证语句，其余和do while一样
+// var n = 1;
+// while(n <= 100){
+// 	console.log(n);
+// 	n++;
+// }
+
+// 随机生成一个数字来猜
+// var r = parseInt(Math.random()*1000);
+// console.log(r);
+
+// console.log(Math.random());
+
+// var di = 0;
+// var gao = 1000;
+
+// while(true){
+// 	var a = parseInt(prompt("输入范围内的数,"+di+"到"+gao));
+// 	if(a>r){
+// 		gao = a;
+// 	}else if(a<r){
+// 		di = a;
+// 	}else{
+// 		alert("是的，生成的就是这个数！"+r);
+// 		break;
+// 	}
+// }
+
+
+// function sum(m,n){
+// 	var s = 0;
+// 	for(var m;m<=n;m++){
+// 		s += m;
+// 	}
+// 	return s;
+// }
+
+// console.log(sum(1,100));
+
+
+// 现在我们要求，用户输入一个偶数，你把所有的质数拆分可能，写出来
+// 判断约数个数
+function yueshugeshu(a){
+	var count = 0;
+	for(var i=1;i<=a;i++){
+		if(a%i==0){
+			count++;
+		}
+	}
+	return count;
+}
+
+// 判断是否为质数
+function iszhishu(a){
+	if(yueshugeshu(a)==2){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+//哥德巴赫猜想
+// var shu =  prompt("输入偶数：");
+// for(var i =1;i<shu;i++){
+// 	if(iszhishu(i) && iszhishu(shu - i)){
+// 		console.log("可以拆分为"+ i + "和"+ (shu - i));
+// 	}
+// }
+
+// 计算数字的阶乘
+function jiecheng(a){
+	var chengji = 1;
+	for(var i=1;i<=a;i++){
+		chengji *=i;
+	}
+	return chengji;
+}
+
+// 计算1到n的阶乘和
+function jiechenghe(a){
+	var sum = 0;
+	for(var i=1;i<=a;i++){
+		sum += jiecheng(i);
+	}
+	return sum;
+}
+
+
+
+
+
+
+
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>

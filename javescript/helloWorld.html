@@ -3,13 +3,160 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>Document</title>
-	<script type="text/javascript">
-		alert("hello World");
-	</script>
-	
-	<style type="text/css">
-		
-	</style>
+<script type="text/javascript">
+		// alert("hello World");
+
+		// var a = 3;
+		// if(a>=3){
+		// 	console.log(a);
+		// }else{
+		// 	console.log('太小了')
+		// }
+
+// for(var i=1;i<=10;i++){
+// 	console.log('第'+ i +'次循环');
+// }
+// console.log(i);
+
+//水仙花数
+// for(var i = 100; i <= 999; i++){
+// 	var ge = i % 10;
+// 	var shi = parseInt(i / 10) % 10;
+// 	var bai = parseInt(i / 100);
+// 	if( Math.pow(ge,3) + Math.pow(shi,3) + Math.pow(bai,3) == i ){
+// 		console.log(i);
+// 	}
+// }
+
+
+//题 1+2+3...+100
+// var sum = 0;
+// for(var i=1;i<101;i++){
+// 	sum += i;
+// }
+// console.log(sum);
+
+
+// // 计算6的阶乘 1*2*3*4*5*6
+// var jie = 1;
+// for(var i=2;i<7;i++){
+// 	jie *= i;
+// }
+// console.log(jie);
+
+
+// 48有多少个约数
+// var count=0;
+// for(var i=1;i<=48;i++){
+// 	if(48 % i == 0){
+// 		count++;
+// 	}
+// }
+// console.log(count + '个约数');
+
+
+// // 约数个数是2个，也就是只有1和它自己，为质数，也是素数,1不是质数
+// for(var i =2;i<=100; i++ ){
+// 	// 就是找i的约数个数
+// 	// 让i从1开始取余直到取到他本身就可以统计出有多少约数
+// 	var count = 0;
+// 	for(j=1;j <= i;j++){
+// 		if(i % j ==0){
+// 			count++;
+// 		}
+// 	}
+// 	// 约数只有2个就是质数
+// 	if(count == 2){
+// 		console.log(i);
+// 	}
+// }
+
+
+// 用户输入一个数字n，计算（3/2）+（4/3）+...(n+1)/n
+// var a = parseInt(prompt("输入一个："));
+// var sum=0;
+// for(var n=2; n<=a;n++){
+// 	sum += (n+1)/n;
+// }
+// console.log(parseInt(sum));
+
+
+// 在控制台输出1~1000之中，所有能被5整除，或者被6整除的数字
+// for(var i=1;i<=1000;i++){
+// 	if(i%5==0 || i%6==0){
+// 		console.log(i);
+// 	}
+// }
+
+
+// 不能被7整除 并且 个位不是7
+// for(var i = 1 ; i <= 60 ; i++){
+// 	if(i % 7 != 0 && i % 10 != 7) console.log(i);
+// }	
+
+
+// 试寻找1~10000之间的所有完美数,除去它本身6外，其余3个数相加，1+2+3=6
+// for(var i = 1;i<=10000; i++){
+// 	var sum=0;
+// 	for(var j=1; j<i;j++){
+// 		if(i%j==0){
+// 			sum+=j;
+// 		}
+// 	}
+// 	if(sum==i){
+// 		console.log(i);
+// 	}
+// }
+
+
+// 用户输入一个数字，判断这个数字是否是质数
+// var a = parseInt(prompt("输入一个数："))
+// var count=0;
+// for(var i=1; i<=a;i++){
+// 	if(a%i ==0){
+// 		count++;
+// 	}
+// }
+// if(count==2){
+// 	alert(a+"是一个质数")
+// }else{
+// 	alert(a+"不是质数")
+// }
+
+
+// 苹果3元一个，鸭梨2元一个，桃子1元一个。现在想用200元买100个水果，在控制台中列出所有可能性。
+// 等价于，列出方程组的解：
+// 设买苹果x个，压力y个，桃子z个
+// 有方程：
+// 3x + 2y + z = 200;
+// x + y + z = 100;
+// 普通写法：
+// for(var x = 0 ; x <= 100 ; x++){
+// 	for(var y = 0 ; y <= 100 ; y++){
+// 		for(var z = 0 ; z <= 100 ; z++){
+// 			//列出1000000中可能
+// 			if(x + y + z == 100 && 3 * x + 2 * y + z == 200){
+// 				console.log(x , y , z);
+// 			}
+// 		}
+// 	}
+// }
+// 优化写法：
+for(var x = 0 ; x <= 100 ; x++){
+	for(var y = 0 ; y <= 100-x ; y++){
+		var z= 100-x-y;
+		if(3 * x + 2 * y + z == 200){
+			console.log(x , y , z);
+		}
+	}
+}
+
+
+
+
+
+
+</script>
 
 </head>
 <body>
