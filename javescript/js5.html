@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+
+// 编写一个函数rev(a)，接收一个参数整数a，能够返回a的逆序
+function rev(a){
+	var b = 0;
+	while(a){   //当a不等于0时
+		b = b*10 + a%10; 
+		a = parseInt(a/10);
+	}
+	return b;
+}
+
+
+
+
+// 看哪些数字是亲密数，约数和都相等
+
+// 返回一个数的所有约数和
+function yueshuhe(a){
+	var sum = 0;
+	for(var i =1;i<a;i++){
+		if(a % i ==0){
+			sum +=i;
+		}
+	}
+	return sum;
+}
+
+
+// 找哪些是亲密数
+for(var m = 1;m < 1000;m++){
+	var c = yueshuhe(m);
+	if(m == yueshuhe(c) && m !=c){
+		console.log(c,m);
+	}
+}
+
+// 判断是不是亲密数
+function zhao(a){
+	var b = yueshuhe(a);
+	if(yueshuhe(b) == a && b !=a){
+		return console.log(a +"和"+ b +"是亲密数");
+	}else{
+		return console.log("没有亲密数");
+	}
+}
+
+
+// 闭包
+function outer(){
+	var count = 0;
+	function inner(){
+		count++;
+	}
+	return inner;
+}
+
+var in1 = outer();
+var in2 = outer();
+// 从1开始数
+in1();  //1
+in1();  //2
+in1();  //3
+in1();  //4
+in1();
+// 新的引用也是从1开始
+in2();  //1
+in2();  //2
+in2();  //3
+in2();  //4
+
+
+
+
+
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>
