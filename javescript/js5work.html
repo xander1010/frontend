@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript">
+
+// 编写函数rev(char) 实现将字符串char倒置
+function daozhi(char){
+	var str = "";
+	for(i=char.length-1;i>=0;i--){
+		str+=char.charAt(i);
+	}
+	return str;
+}
+// 方法2：
+function rev(a){
+	var arr = a.split("");  //空字符串分开成数组
+	arr.reverse();
+	return arr.join("");  //空字符串连接成字符串
+}
+
+
+// 编写函数rightchange(char,n) 实现字符串char循环右移n位
+// 方法1：用循环，arr.unshift(arr.pop())
+
+// 方法2：
+function rightchange(char,n){
+	n = n%char.length;  //移动多少位，超过长度时也正常计算;
+	if(n==0) return char; 
+	//就是把移动的字母加上之前的，取出来就行
+	return char.substr(-n) + char.substr(0,char.length - n);
+}
+
+// 编写函数maxr(char) 返回字符串char中最长的连续重复字母
+function maxr(char){
+	var a = 0;
+	var b = 1;   //b的初始位置就是a的右边1位
+	var maxLength = 0;  //重复的最大的数量
+	var maxletter = ""; //重复数量最多的字母
+
+	// 循环一直做，直到a指针指向了最后字母
+	while(a != char.length - 1){
+		// 判断，两个指针指向的字母是否一样
+		if(char.charAt(b) == char.charAt(a)){
+			//两个指针指向的字母相同，右指针b右移
+			b++;
+		}else{
+			// 两个所指字母不同
+			//和当前最大的进行比较
+			if(b-a >= maxLength){   //>=返回相同的最后一个，>返回相同个数的第一个
+				maxLength = b - a; //两个指针之间距离比最大还大，现在b-a就是最大的距离
+				maxLength = b - a;
+				maxletter = char.charAt(a); //a指针指向的就是这个字母
+			}
+			// 左指针a右移
+			// b指针也要跟着复位，就是a+1的位置
+			a++;
+			b = a + 1;
+		}
+	}
+
+	return maxletter;
+}
+
+
+// 有10个学生的成绩存在数组中，请统计大于等于平均成绩的人数。
+function avgs(){
+	var scor = [6,45,78,12,60,80,90,99,100,85];
+	var sum = 0;
+	for(var i = 0;i<scor.length;i++){
+		sum += scor[i];
+	}
+
+	var averg = sum / scor.length;
+	console.log(averg);
+
+	var count = 0;
+	for(var i = 0;i<scor.length;i++){
+		if(scor[i] >= averg){
+			count ++;
+		}
+	}
+	return count;
+}
+
+// 统计最高分，最低分，并将最高分和最低分学生的下标输出
+function maxAndmin(){
+	var scor = [6,45,78,12,60,80,90,99,100,85];
+	//设置一个最大和最小值
+	var max = 0;
+	var min = 101;
+	// 设置下标
+	var maxbiao = 0;
+	var minbiao = 0;
+	// 找最大值
+	for(var i = 0;i<scor.length;i++){
+		if(scor[i] > max){
+			max = scor[i];
+			maxbiao = i;
+		}
+		if(scor[i] < min){
+			min = scor[i];
+			minbiao = i;
+		}
+	}
+	return "最大值"+max +"下标"+maxbiao+"，最小值"+min+"下标"+minbiao;
+}
+
+
+// 勾股定理：直角三角形中，两个直角边的平方和，等于斜边平方和。寻找三边的长度都不大于100，并且三边边长都是整数的可能，在控制台输出
+for(var x = 1;x<=100;x++){
+	for(var y = 1;y<=100;y++){
+		for(var z = 1;z<=100;z++){
+			if(x*x+y*y == z*z){
+				console.log(x,y,z);
+			}
+		}
+	}
+}
+
+
+
+
+</script>
+<body>
+	
+</body>
+</html>
