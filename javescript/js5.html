@@ -157,7 +157,7 @@ arr1.sort(function(a,b){
 	});
 
 
-// 转为字符串
+// 数组转为字符串
 // 语法，不写分隔符，那么等价于用逗号分开
 // var str = arr.join(分隔符);
 var arr = [1,2,3,4,5,6,7];
@@ -168,10 +168,146 @@ console.log(str);
 
 var arr3 = [23,435,456,23,2,345,2,32,11,324,32,43,65,667];
 arr3.sort(function(a,b){
-	console.log(`a:${a}  b:${b}`)
+	// console.log(`a:${a}  b:${b}`)
 	return a-b;
 });
 console.log(arr3);
+
+
+// 字符串的常见方法：
+// charAt() 返回在指定位置的字符。
+var str = "jiklasf";
+console.log(str.charAt(1));
+
+// indexOf() 检索字符串，返回对应字符串的下标
+var str1 =  "我爱你中国";
+console.log(str1.indexOf("我"));  //0
+
+
+// replace() 替换
+// 把a替换为0 ， 只替换1个。
+"abcdefgaa".replace("a","0");    // "0bcdefgaa"
+
+
+// slice() 提取
+"我爱你亲爱的祖国的人民币".slice(-3,-1)   //"人民"
+
+// split() 把字符串→数组,从什么地方拆分,就是参数
+var st = "1234560654321";
+// 以字符串中的6来拆分
+var ast = st.split("6");  //["12345", "0", "54321"]
+// 用join把数组里的每个数据转换成字符串，并以分隔符连接
+var bst = ast.join("~")
+console.log(bst);  //12345~0~54321
+
+
+// substr() 截取子串
+//从下标为1的地方开始取3个字符
+"lasdfjow3lka".substr(1,3);
+
+// substring() 截取子串
+// “字符串”.substring(start,end); 不包括end
+//从下标0开始取到下标为2前，不包括2
+"iowklz".substring(0,2); //io
+"iownf".substring(3); //nf 从下标为3开始取完
+
+// toLowerCase()、toUpperCase(); 转换为大小写
+"where are you".toUpperCase();
+
+
+// 作业练习：
+// 1、输出对应的字符多少次
+function repeat(a,n){
+	var str = "";
+	for(var i=1;i<=n;i++){
+		str += a;
+		// 或者用连接：
+		//str = str.concat(a);
+	}
+	return str;
+}
+
+//方法2：投机取巧
+function repeat1(a,n){
+	var arr = [];
+	arr.length = n+1;
+	var str = arr.join(a);
+	return str;
+}
+
+// 二分法
+function erfen(char,n){
+	var str = "";
+	while(true){
+		//1%2==1 
+		if(n%2 == 1){
+			str += char;
+		}
+		if(n ==1 || n ==0){
+			break;
+		}
+		n = parseInt(n/2);
+		char = char + char;
+	}
+	return str;
+}
+
+
+// 2、打印金字塔
+// 用上述重复的方法打印
+function chongfu(a){
+	for(var i=1;i<=a;i++){
+		var str1 = repeat1(" ",a-i);
+		var str2 = repeat1("*",(2*i)-1);
+		var str = str1+str2;
+		console.log(str);
+	}
+	return "OK";
+}
+// 用for循环打印
+function dayin(a){
+	for(var i=1;i<=a;i++){
+		var str ="";
+		for(var j=1;j<=(a-i);j++){
+			str+=" ";
+		}
+		for(m=1;m<=(2*i)-1;m++){
+			str+="*"
+		}
+		console.log(str);
+	}
+	return "打印成功";
+}
+
+
+// 3.将字符倒置
+function rev(char){
+	var arr = char.split();
+}
+
+// 4.将字符串"i come from beijing"倒置
+function four(){
+	var str = "i come from beijing";
+	var arr = str.split(" ");
+	arr.reverse();
+	str = arr.join(" ");
+	return str;
+}
+
+// 5.编写函数rightchange(char,n) 实现字符串char循环右移n位
+function rightchange(char,n){
+
+}
+
+// 6.编写函数maxr(char) 返回字符串char中最长的连续重复字母
+function maxr(char){
+
+}
+
+//7.有10个学生的成绩存在数组中,统计大于等于平均成绩的人数
+
+
+
 
 
 </script>
