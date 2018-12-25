@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS7</title>
+</head>
+<script type="text/javascript">
+
+// 方法1：思路就是把str2的所有子串都遍历，然后看看是否是str1的一部分
+// 如果是就比较长度，把长度最大的返回。这里仰赖js提供的一个indexOf()可以
+// 快速检测一个字符串是不是另一个字符串的一部分。
+function check(str1,str2){
+	var s;
+
+	var maxlength = 0;	//最大子串的长度
+	var maxchar = "";	//存放最大子串
+
+	//遍历str2的所有子字符串
+	for(var start = 0 ; start <= str2.length ; start++){
+		for(var end = start + 1; end <= str2.length; end++){
+			//变量s就是当前遍历的子字符串
+			s = str2.substring(start,end);
+			//就要看s是不是在str1中
+			if(str1.indexOf(s) != -1 && s.length > maxlength){
+				//在源字符串中有，所以当前的最大子串长度就是s的长度
+				maxlength = s.length;
+				//当前的最大子串就是你遍历这个
+				maxchar = s;
+			}
+		}
+	}
+	return maxchar;
+}
+
+//方法2：是更经典的4指针法，为什么经典，因为就js中有indexOf函数。
+//c语言中，没有indexOf这个东西，我们不能立即判断一个字符串是不是另一个字符串的子函数
+//c语言中，就有一个经典的4指针法。
+
+function check(str1,str2){
+	//四个指针
+	var a = 0;
+	var b = 1;
+	var c = 0; 
+	var d = 1;
+
+	var maxlength = 0;
+	var maxchar = "";
+	
+	while(true){
+		if(str1.charAt(a) != str2.charAt(c)){
+			//如果a、c指针不一样，那么c、d右移
+			c++;
+			d++;
+		}else{
+			//a、c一样
+			while(true){
+				if(str1.charAt(b) == str2.charAt(d)){
+					b++;
+					d++;
+					if(b - a > maxlength){
+						maxlength = b - a;
+						maxchar = str1.substring(a,b);
+					}
+				}else{
+					c = 0;
+					d = 1;
+					a++;
+					b = a + 1;
+					break;
+				}
+				//验收
+				if(b >= str1.length || d >= str2.length){
+					//如果c、d到头了，那么c、d归位，a右移
+					break;
+				}
+			}
+		}
+
+		//验收，c、d发生了增长，防止cd超标
+		if(c >= str2.length || d >= str2.length){
+			//如果c、d到头了，那么c、d归位，a右移
+			c = 0;
+			d = 1;
+			a++;
+			b = a + 1;
+		}
+
+		//验收,a到头了也没法比了，就结束
+		if(a >= str1.length){
+			break;
+		}
+	}
+
+	return maxchar;
+}
+
+
+function fun(a,b){
+	arguments[0] = 1;
+	console.log(a,b);  //a =1
+}
+
+function sum(a,b){
+	if(arguments.length == 1){
+		return a;
+	}else{
+		return a+b;
+	}
+}
+
+// 所有参数和和
+function sum1(){
+	var sum = 0;
+	for(var i = 0;i<arguments.length;i++){
+		sum += arguments[i];
+	}
+	return sum;
+}
+
+// IIFE，即时调用函数表达式
+(function(a){
+	console.log("IIFE");
+})(1);
+
+
+
+// 闭包与数组结合
+
+var arr = [];	//空数组
+//用循环语句去填充数组里面的每个项
+for(var i = 0 ; i <= 10 ; i++){
+	arr[i] = function(){
+		alert(i);  //我们在这里，试图每个函数弹出自己的序号
+	}
+}
+
+//循环语句执行完毕，arr里面有11个函数了，都是弹出11
+// arr[6]();		//11 
+// arr[9]();		//11
+// arr[10]();		//11
+
+// 解决办法，用IIFE的方法,每次赋值后就用了
+for(var i = 0 ; i <= 10 ; i++){
+	(function(m){
+		arr[m] = function(){
+			alert(m);
+		}
+	})(i);
+}
+// 再调用
+// arr[6](); //6
+
+
+// 冒泡排序
+
+// 数组自带的sort排序
+// var ar = [2,45,245,54,3,8,48]
+// ar.sort(function(a,b){
+// 	return a - b;  //正序
+// })
+// console.log(ar);
+
+var arr1 = [2,45,245,54,3,8,48,74,34,66,1,5,3,557,1325,12,8]
+
+// 外层控制总的比较多少趟，n-1
+for(var i = 0;i < arr1.length;i++){
+	// 内层控制每趟的比较
+	// j>i;因为每走一趟就会确定一个应该排在前面的数
+	for(var j = arr1.length-1;j > i ;j--){
+		//如果后面的数小于前面的数，交换值
+		if(arr1[j] < arr1[j-1]){
+			var temp = arr1[j];
+			arr1[j] = arr1[j-1];
+			arr1[j-1] = temp;
+		}
+	}
+}
+console.log(arr1);
+
+
+// 快速排序 ，看不懂？？？？
+var arr = [6,4,5,7,8,2,2,7,9];
+
+console.log(arr);
+
+function quicksort(start,end){
+	//验证有效性
+	if(start >= end){
+		return;
+	}
+	//标志
+	var pivot = arr[start];
+	//哨兵
+	var left = start;
+	var right = end;
+	
+	while(left != right){
+		//让右边哨兵移动，直到找到了一个数字小于等于了标志
+		while(arr[right] >= pivot && right > left){
+			right--;
+		}
+		
+		while(arr[left] <= pivot && left < right){
+			left++;
+		}
+
+		if(left < right){
+			//交换这个两个数字的位置
+			var temp = arr[right];
+			arr[right] = arr[left];
+			arr[left] = temp;
+		}
+			
+	}
+	//left和right相同了		
+	//交换右哨兵的数字和标志
+	arr[start] = arr[left];
+	arr[left] = pivot;
+
+	quicksort(start , left - 1);
+	quicksort(right + 1,end);
+}
+
+quicksort(0,arr.length - 1);
+
+console.log(arr);
+
+
+
+
+
+
+
+
+</script>
+<body>
+	
+</body>
+</html>
