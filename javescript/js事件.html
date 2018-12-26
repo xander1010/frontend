@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS事件</title>
+</head>
+<style type="text/css">
+	div{
+		width: 200px;
+		height: 200px;
+		background-color: yellowgreen;
+		cursor:pointer;
+	}
+</style>
+
+<script type="text/javascript">
+	//用window.onload，可以让所有节点加载完再执行
+	// 这时就可以把语言写在html前面了
+	window.onload = function(){
+		var oBox1 = document.getElementById("box1");
+		oBox1.style.color = "red";
+		oBox1.style.backgroundColor = "white";
+	}
+</script>
+
+
+<body>
+	
+	<div id="box1">哈哈哈</div>
+
+
+
+	<div id="box"></div>
+	
+	<script type="text/javascript">
+		// 得到元素
+		var oDiv = document.getElementById("box");
+		
+		// 事件
+		// 点击事件
+		oDiv.onclick = function(){
+			alert("hello !");
+		}
+		// 鼠标移上
+		oDiv.onmouseover = function(){
+			// 自己的样式改变写this
+			this.style.backgroundColor = "yellow";
+		}
+		// 鼠标离开
+		oDiv.onmouseout = function(){
+			this.style.backgroundColor = "yellowgreen";
+		}
+		// 鼠标按下
+		oDiv.onmousedown = function(){
+			this.style.backgroundColor = "green";
+		}
+		oDiv.onmouseup = function(){
+			this.style.backgroundColor = "yellow";
+		}
+
+	</script>
+	
+
+	<input type="text" id="kk">
+
+	<script type="text/javascript">
+		var oInput = document.getElementById("kk");
+		oInput.onfocus = function(){
+			console.log("得到焦点");
+		}
+		oInput.onblur = function(){
+			console.log("失去焦点");
+		}
+
+	</script>
+
+	
+
+
+
+
+</body>
+</html>

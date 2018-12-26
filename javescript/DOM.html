@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	#box{
+		width: 200px;
+		height: 200px;
+		background-color: green;
+	}
+	.da{
+		width: 500px;
+		height: 500px;
+		background-color: yellowgreen;
+	}
+	.xiao{
+		width: 200px;
+		height: 200px;
+		background-color: yellow;
+	}
+
+</style>
+<body>
+<!-- html内容 -->
+
+<div id="box"></div>
+
+<!-- <input type="text" name="haha"> -->
+
+<img src="images/1.jpg" alt="1" id="tutu">
+
+<a href="http://www.sohu.com" id="lianjie" target="_blank">sohu.com</a>
+
+<!-- 可以加自定义属性 zidingyi-->
+<div class="xiao" id="Box1" zidingyi="123" style="line-hight:1px;"></div>
+
+
+
+</body>
+
+<!-- js内容 -->
+<script type="text/javascript">
+	// 通过点语法只能设置为行内的样式
+	var oBox = document.getElementById("box");
+	oBox.style.backgroundColor = "red";
+
+	// 操作元素的属性
+	var oTutu = document.getElementById("tutu");
+	oTutu.src = "images/2.jpg";
+	// 用setAttribute("要改的属性","改成什么")方法
+	oTutu.setAttribute("src", "images/2.jpg");
+
+	var oLian = document.getElementById("lianjie");
+	oLian.href = "http://www.baidu.com";
+
+	// 修改一些如class时要写className
+	var oDiv = document.getElementById("Box1");
+	oDiv.className = "da";
+	// 获取自定义属性只能用getAttribute()
+	console.log(oDiv.getAttribute("zidingyi"));
+	//点语法获取是对象类型
+	console.log(oDiv.style);
+	// 获取行内样式,字符串类型
+	console.log(oDiv.getAttribute("style"));
+
+
+</script>
+</html>

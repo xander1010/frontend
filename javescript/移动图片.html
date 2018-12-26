@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>移动图片</title>
+</head>
+<style type="text/css">
+	img{
+		position: absolute;
+		top:200px;
+		left: 820px;
+	}
+	.anniu{
+		position: absolute;
+		left: 860px;
+		top: 500px; 
+		width: 100px;
+		border:1px dashed black;
+	}
+</style>
+
+
+<body>
+
+<!-- html内容 -->
+
+<img src="images/1.jpg" alt="" id="tu">
+	
+<div class="anniu">
+	<table>
+		<tr>
+			<td><input type="button" value="↖" id="btn1"></td>
+			<td><input type="button" value="↑" id="btn2"></td>
+			<td><input type="button" value="↗" id="btn3"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="←" id="btn4"></td>
+			<td><input type="button" value="O" id="reset"></td>
+			<td><input type="button" value="→" id="btn5"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="↙" id="btn6"></td>
+			<td><input type="button" value="↓" id="btn7"></td>
+			<td><input type="button" value="↘" id="btn8"></td>
+		</tr>
+	</table>
+</div>
+
+
+<!-- js内容 -->
+<script type="text/javascript">
+var tu = document.getElementById("tu");
+var btn1 = document.getElementById("btn1");
+var btn2 = document.getElementById("btn2");
+var btn3 = document.getElementById("btn3");
+var btn4 = document.getElementById("btn4");
+var btn5 = document.getElementById("btn5");
+var btn6 = document.getElementById("btn6");
+var btn7 = document.getElementById("btn7");
+var btn8 = document.getElementById("btn8");
+
+var nowleft = 820;
+var nowtop = 200;
+
+// 移动赋值方法
+function move(){
+	tu.style.left = nowleft + "px";
+	tu.style.top = nowtop + "px";
+}
+
+// 重置位置
+function restart(){
+
+}
+
+//判断是不是已到达了边缘
+function daobian(){
+	
+}
+
+btn1.onclick = function(){
+	nowleft -= 10;
+	nowtop -= 10;
+	move();
+}
+
+	
+</script>
+
+</body>
+</html>
