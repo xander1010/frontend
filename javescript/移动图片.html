@@ -72,6 +72,7 @@ function move(){
 //判断是不是已到达了边缘
 function daobian(){
 	if(nowleft <= 0 || nowtop <= 0){
+		console.log(nowtop);
 		btn2.onclick = function(){
 			alert("走不动了哦！")
 		}

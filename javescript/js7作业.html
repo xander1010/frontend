@@ -12,6 +12,7 @@
 		height: 230px;
 		border: 1px solid gray;
 		padding-left: 10px;
+		margin-bottom: 30px;
 	}
 	.form .tips{
 		position: absolute;
@@ -24,6 +25,26 @@
 		border-radius: 5px;
 		box-shadow: 1px 1px 1px orange;
 		display: none;
+	}
+
+	.lunbo{
+		width: 850px;
+		height: 840;
+		border: 1px dashed orange;
+		overflow: hidden;
+		margin:0 auto;
+		margin-bottom: 30px;
+	}
+
+	.zihao{
+		width: 800px;
+		border: 1px solid red;
+		padding: 10px;
+		margin: 0 auto;
+	}
+	.zihao .wenzi{
+		border: 1px dashed orange;
+		margin-top: 10px;
 	}
 </style>
 <body>
@@ -46,17 +67,17 @@
 
 	<!-- 2.轮播图制作 -->
 	<div class="lunbo">
-		<input type="button" value="上一个">
-		<img src="images/beijing/1.jpeg" alt="">
-		<input type="button" value="下一个">
+		<input type="button" value="上一个" id="leftbtn">
+		<img src="images/beijing/1.jpeg" alt="" id="tu">
+		<input type="button" value="下一个" id="rightbtn">
 	</div>
 	
 
 	<!-- 3.字号变化 -->
 	<div class="zihao">
-		<input type="button" value="字号变大">
-		<input type="button" value="字号变小">
-		<div class="wenzi">
+		<input type="button" value="字号变大" id="da">
+		<input type="button" value="字号变小" id="xiao">
+		<div class="wenzi" id="wenzi">
 			这里是一些文字，请你看过后要注意的一相事项，如果你不看出的问题我们不会负责的哦，所以要注意的啊！
 		</div>
 	</div>
@@ -78,13 +99,49 @@
 
 <!-- 2.轮播 -->
 <script type="text/javascript">
-	var 
+	var tu = document.getElementById("tu");
+	var leftbtn = document.getElementById("leftbtn");
+	var rightbtn = document.getElementById("rightbtn");
+
+	var nowpic = 0;
+
+	leftbtn.onclick = function(){
+		nowpic--;
+		if(nowpic < 1){
+			nowpic = 5;
+		}
+		tu.src = "images/beijing/"+nowpic+".jpeg";
+	}
+	rightbtn.onclick = function(){
+		nowpic++;
+		if(nowpic > 5){
+			nowpic = 1;
+		}
+		tu.src = "images/beijing/"+nowpic+".jpeg";
+	}
 </script>
 
 
 <!-- 3.字号变化 -->
 <script type="text/javascript">
-	var 
+	var da = document.getElementById("da");
+	var xiao = document.getElementById("xiao");
+	var wenzi = document.getElementById("wenzi");
+
+	var fonts = 14;
+
+	da.onclick = function(){
+		fonts += 4;
+		wenzi.style.fontSize = fonts +"px"; 
+	}
+	xiao.onclick = function(){
+		fonts -= 4;
+		if(fonts < 10){
+			alert("最小了哦！");
+			fonts = 10;
+		}
+		wenzi.style.fontSize = fonts +"px"; 
+	}
 </script>
 
 </body>
