@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>work</title>
+</head>
+<style type="text/css">
+	.form{
+		position: relative;
+		margin:0 auto;
+		width: 200px;
+		height: 230px;
+		border: 1px solid gray;
+		padding-left: 10px;
+	}
+	.form .tips{
+		position: absolute;
+		padding: 3px;
+		width: 150px;
+		color: red;
+		font-size: 8px;
+		border:1px solid red;
+		background-color: yellow;
+		border-radius: 5px;
+		box-shadow: 1px 1px 1px orange;
+		display: none;
+	}
+</style>
+<body>
+	<!-- 1.悬浮 -->
+	<div class="form">
+		<p>邮箱: <input type="text"></p>
+		<p>密码: <input type="password"></p>
+		<label for="mdl" id="fu"><input type="checkbox" id="mdl">
+			十天免登录
+		</label>
+		<div class="tips" id="tips">
+			这里是一些小提示语句，请你看过后要注意的一相事项，如果你不看出的问题我们不会负责的哦，所以要注意的啊！
+		</div>
+		<div style="margin-top:30px;">
+			<input type="button" value="登录">
+			<input type="button" value="注册">
+		</div>
+	</div>
+
+
+	<!-- 2.轮播图制作 -->
+	<div class="lunbo">
+		<input type="button" value="上一个">
+		<img src="images/beijing/1.jpeg" alt="">
+		<input type="button" value="下一个">
+	</div>
+	
+
+	<!-- 3.字号变化 -->
+	<div class="zihao">
+		<input type="button" value="字号变大">
+		<input type="button" value="字号变小">
+		<div class="wenzi">
+			这里是一些文字，请你看过后要注意的一相事项，如果你不看出的问题我们不会负责的哦，所以要注意的啊！
+		</div>
+	</div>
+
+
+
+<!-- 1.悬浮 -->
+<script type="text/javascript">
+	var fu = document.getElementById("fu");
+	var tip = document.getElementById("tips");
+
+	fu.onmouseover = function(){
+		tip.style.display = "block";
+	}
+	fu.onmouseout = function(){
+		tip.style.display = "none";
+	}
+</script>
+
+<!-- 2.轮播 -->
+<script type="text/javascript">
+	var 
+</script>
+
+
+<!-- 3.字号变化 -->
+<script type="text/javascript">
+	var 
+</script>
+
+</body>
+</html>

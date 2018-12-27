@@ -58,6 +58,7 @@ var btn5 = document.getElementById("btn5");
 var btn6 = document.getElementById("btn6");
 var btn7 = document.getElementById("btn7");
 var btn8 = document.getElementById("btn8");
+var reset = document.getElementById("reset");
 
 var nowleft = 820;
 var nowtop = 200;
@@ -68,19 +69,56 @@ function move(){
 	tu.style.top = nowtop + "px";
 }
 
-// 重置位置
-function restart(){
-
-}
-
 //判断是不是已到达了边缘
 function daobian(){
-	
+	if(nowleft <= 0 || nowtop <= 0){
+		btn2.onclick = function(){
+			alert("走不动了哦！")
+		}
+	}
+}
+
+reset.onclick = function(){
+	nowleft = 820;
+	nowtop = 200;
+	move();
 }
 
 btn1.onclick = function(){
 	nowleft -= 10;
 	nowtop -= 10;
+	move();
+}
+btn2.onclick = function(){
+	nowtop -= 10;
+	daobian();
+	move();
+}
+btn3.onclick = function(){
+	nowleft += 10;
+	nowtop -= 10;
+	move();
+}
+btn4.onclick = function(){
+	nowleft -= 10;
+	move();
+}
+btn5.onclick = function(){
+	nowleft += 10;
+	move();
+}
+btn6.onclick = function(){
+	nowleft -= 10;
+	nowtop += 10;
+	move();
+}
+btn7.onclick = function(){
+	nowtop += 10;
+	move();
+}
+btn8.onclick = function(){
+	nowleft += 10;
+	nowtop += 10;
 	move();
 }
 
