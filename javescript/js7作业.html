@@ -5,6 +5,14 @@
 	<title>work</title>
 </head>
 <style type="text/css">
+	.tiaose{
+		float: left;
+		padding-left: 10px;
+		width: 270px;
+		height: 210px;
+		border: 1px solid black;
+	}
+
 	.form{
 		position: relative;
 		margin:0 auto;
@@ -46,8 +54,39 @@
 		border: 1px dashed orange;
 		margin-top: 10px;
 	}
+	.disable{
+		background-color: gray;
+	}
 </style>
 <body>
+
+	<!-- 调色板 -->
+	<div class="tiaose">
+		<p>调色板，输入数字调色：</p>
+		<p>
+			<span>R:</span>
+			<input type="button" value="-" id="rLeft">
+			<input type="text" max="255" value="111" id="rTxt">	
+			<input type="button" value="+" id="rRight">	
+		</p>
+		<p>
+			<span>G:</span>
+			<input type="button" value="-" id="gLeft">
+			<input type="text" max="255" value="222" id="gTxt">	
+			<input type="button" value="+" id="gRight">
+		</p>
+		<p>
+			<span>B:</span>
+			<input type="button" value="-" id="bLeft">
+			<input type="text" max="255" value="255" id="bTxt">	
+			<input type="button" value="+" id="bRight">	
+		</p>
+		<p>
+			<input type="button" value="change-color" id="changeBtn">
+		</p>
+
+	</div>
+
 	<!-- 1.悬浮 -->
 	<div class="form">
 		<p>邮箱: <input type="text"></p>
@@ -70,7 +109,14 @@
 		<input type="button" value="上一个" id="leftbtn">
 		<img src="images/beijing/1.jpeg" alt="" id="tu">
 		<input type="button" value="下一个" id="rightbtn">
+
+		<p>
+			<input type="text" id="picNum">
+			<input type="button" value="go" id="gobtn">
+		</p>
 	</div>
+	
+
 	
 
 	<!-- 3.字号变化 -->
@@ -102,8 +148,10 @@
 	var tu = document.getElementById("tu");
 	var leftbtn = document.getElementById("leftbtn");
 	var rightbtn = document.getElementById("rightbtn");
+	var txt = document.getElementById("picNum");
+	var gobtn = document.getElementById("gobtn");
 
-	var nowpic = 0;
+	var nowpic = 1;
 
 	leftbtn.onclick = function(){
 		nowpic--;
@@ -119,6 +167,15 @@
 		}
 		tu.src = "images/beijing/"+nowpic+".jpeg";
 	}
+	gobtn.onclick = function(){
+		nowpic = picNum.value;
+		if(nowpic >5 || nowpic < 1){
+			alert("数字1-5之间！")
+			nowpic = 1;
+			picNum.value = 1;
+		}
+		tu.src = "images/beijing/"+nowpic+".jpeg";
+	}
 </script>
 
 
@@ -131,17 +188,107 @@
 	var fonts = 14;
 
 	da.onclick = function(){
+		xiao.className = "none";
 		fonts += 4;
 		wenzi.style.fontSize = fonts +"px"; 
 	}
-	xiao.onclick = function(){
+	xiao.onclick = function(){ 
 		fonts -= 4;
 		if(fonts < 10){
 			alert("最小了哦！");
 			fonts = 10;
+			this.className = "disable";
 		}
 		wenzi.style.fontSize = fonts +"px"; 
 	}
+</script>
+
+
+<!-- 调色板 -->
+<script type="text/javascript">
+	var rLeft = document.getElementById("rLeft");
+	var rTxt = document.getElementById("rTxt");
+	var rRight = document.getElementById("rRight");
+
+	var gLeft = document.getElementById("gLeft");
+	var gTxt = document.getElementById("gTxt");
+	var gRight = document.getElementById("gRight");
+
+	var bLeft = document.getElementById("bLeft");
+	var bTxt = document.getElementById("bTxt");
+	var bRight = document.getElementById("bRight");
+
+	var changeBtn = document.getElementById("changeBtn");
+
+
+	var r = 111;
+	var g = 222;
+	var b = 255;
+	var reg = /^\d+$/;
+
+	function change(){
+		if(r<0 || g<0 ||b<0){
+			alert("请输入0-255之间的数字");
+			r = 0;
+			g = 0;
+			b = 0;
+		}else if(r>255 || g>255 || b>255){
+			alert("请输入0-255之间的数字");
+			r = 255;
+			g = 255;
+			b = 255;
+		}
+		document.body.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+		rTxt.value = r;
+		gTxt.value = g;
+		bTxt.value = b;
+	}
+
+	rLeft.onclick = function(){
+		r --; 
+		rTxt.value = r;
+		change();
+	}
+
+	rRight.onclick = function(){
+		r ++; 
+		rTxt.value = r;
+		change();
+	}
+
+	gLeft.onclick = function(){
+		g --; 
+		gTxt.value = g;
+		change();
+	}
+	gRight.onclick = function(){
+		g ++; 
+		gTxt.value = g;
+		change();
+	}
+
+	bLeft.onclick = function(){
+		b --; 
+		bTxt.value = b;
+		change();
+	}
+	bRight.onclick = function(){
+		b ++; 
+		bTxt.value = b;
+		change();
+	}
+
+	changeBtn.onclick = function(){
+		if(!reg.test(rTxt.value) || !reg.test(gTxt.value) || !reg.test(bTxt.value)){
+			alert("请输入数字！")
+			return;
+		}
+		r = rTxt.value;
+		g = gTxt.value;
+		b = bTxt.value;
+		change();
+	}
+
 </script>
 
 </body>

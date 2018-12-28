@@ -71,13 +71,13 @@ function move(){
 
 //判断是不是已到达了边缘
 function daobian(){
-	if(nowleft <= 0 || nowtop <= 0){
+	if(nowleft < 0 || nowtop < 0){
 		console.log(nowtop);
-		btn2.onclick = function(){
-			alert("走不动了哦！")
-		}
+		alert("走不动了哦！");
+		nowtop = 0;
 	}
 }
+
 
 reset.onclick = function(){
 	nowleft = 820;
@@ -88,6 +88,7 @@ reset.onclick = function(){
 btn1.onclick = function(){
 	nowleft -= 10;
 	nowtop -= 10;
+	daobian();
 	move();
 }
 btn2.onclick = function(){
@@ -98,6 +99,7 @@ btn2.onclick = function(){
 btn3.onclick = function(){
 	nowleft += 10;
 	nowtop -= 10;
+	daobian();
 	move();
 }
 btn4.onclick = function(){
