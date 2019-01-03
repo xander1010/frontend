@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	div{
+		width: 300px;
+		height: 100px;
+		border: 1px solid gray;
+	}
+	div p{
+		float: left;
+		height: 20px;
+		width: 20px;
+		margin-right: 10px;
+		background-color: green;
+		border: 1px solid green;
+	}
+	
+	.box4{
+		border:none;
+		height: 230px;
+	}
+	.box4 tr td{
+		width: 120px;
+		height: 30px;
+		border:1px solid yellowgreen;
+	}
+	.box4 table{
+		border-collapse: collapse;
+	}
+
+	.box5{
+		width: 500px;
+	}
+	.box5 p{
+		float: left;
+		width: 40px;
+		height: 40px;
+		margin-right: 20px;
+		background-color: gray;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+</style>
+<body>
+	
+	<p>我是P标签</p>
+	<p>我是P标签</p>
+	<p>我是P标签</p>
+	<p>我是P标签</p>
+	<p>我是P标签</p>
+	<p>我是P标签</p>
+	
+	<div class="box1" id="box1">
+		<p></p>
+		<p></p>
+		<p></p>
+	</div>
+	<div class="box2" id="box2">
+		<p></p>
+		<p></p>
+		<p></p>
+	</div>
+	
+	<div class="box3" id="box3">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="button" value="全选" id="anniu">
+	</div>
+	
+	<div class="box4" id="box4">
+		<table>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="box5" id="box5">
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<h1 id="show">请选择</h1>
+	</div>
+
+
+
+
+<script type="text/javascript">
+	var ops = document.getElementsByTagName("p");
+	ops[0].style.color = "red";
+
+	// 连续打点，控制某个元素下的tagname
+	var dps = document.getElementById("box2").getElementsByTagName("p");
+	dps[2].style.backgroundColor = "red";
+
+	// 点击变换颜色
+	var state = 0;
+	dps[0].onclick = function(){
+		if(state == 0){
+			state = 1;
+			var col ="blue";
+			this.style.backgroundColor = col;
+			console.log('1111');
+		}else{
+			state = 0;
+			this.style.backgroundColor = "green";
+			console.log('2222');
+		}
+	}
+
+	// 全选与非全选
+	var inps = document.getElementById("box3").getElementsByTagName("input");
+	var anniu = document.getElementById("anniu");
+
+	var chex = 0;
+
+	anniu.onclick = function(){
+		chex = chex == 0 ? 1 : 0;
+		var sel = chex == 0 ? "" : "checked";
+		var xuanze = chex==0? "全选":"取消";
+		for(var i = 0; i<inps.length;i++){
+			inps[i].checked = sel;
+		}
+		anniu.value = xuanze;
+	}
+	
+	// 表格隔行变色	
+	var tabs = document.getElementById("box4").getElementsByTagName("tr");
+	for(var i = 0;i<tabs.length;i+=2){
+		tabs[i].style.backgroundColor = "green";
+	}
+
+	// 对应与排他，制作鼠标悬浮时变色
+	var paita = document.getElementById("box5").getElementsByTagName("p");
+
+	var show = document.getElementById("show");
+
+	// 外层控制要哪个变
+	for(var i=0;i<paita.length;i++){
+		// 为每个标签增加一个属性等于这个数，编号
+		paita[i].idx = i+1;
+		// 监听
+		paita[i].onmouseover = function(){
+			//这里循环控制先让其他的都变灰，包括自己
+			for(var j=0;j<paita.length;j++){
+				paita[j].style.backgroundColor= "gray";
+			}
+		// 这里让自己变红,也就是paita[i] = this
+		this.style.backgroundColor= "red";
+		// 设置innerHTML属性让文字改变
+		show.innerHTML = "第"+ this.idx +"个";
+		}
+
+		// 鼠标离开时
+		paita[i].onmouseout = function(){
+			//这里循环控制先让其他的都变灰，包括自己
+			for(var j=0;j<paita.length;j++){
+				paita[j].style.backgroundColor= "gray";
+			}
+			show.innerHTML = "请选择";
+		}
+	}
+	
+
+
+</script>
+
+</body>
+</html>
