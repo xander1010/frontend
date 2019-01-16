@@ -15,6 +15,7 @@
 		height: 340px;
 		/*border: 1px solid red;*/
 		margin: 50px auto;
+		left: 30%;
 	}
 	.carousel ul{
 		list-style: none;
@@ -76,6 +77,17 @@
 		background-color: black;
 		opacity: 0.6;
 	}
+	.carousel .imagesList li h3{
+		position: absolute;
+		bottom: 20px;
+		line-height: 60px;
+		color: white;
+		opacity: 0.9;
+		margin-left: 10px;
+	}
+	.carousel .imagesList li h3:hover{
+		text-decoration: underline;
+	}
 
 </style>
 <body>
@@ -94,21 +106,29 @@
 					<a href="">
 						<img src="images/sohu/bbb.jpg" alt="">
 					</a>
+					<div class="blackmask"></div>
+					<h3>谢霆锋“锋味曲奇”含致癌物质？曾被用作阿娇婚礼喜饼</h3>
 				</li>
 				<li>
 					<a href="">
 						<img src="images/sohu/ccc.jpg" alt="">
 					</a>
+					<div class="blackmask"></div>
+					<h3>马蓉真是“走在时尚尖端”的人!某奢侈品牌居然cos她动作</h3>
 				</li>
 				<li>
 					<a href="">
 						<img src="images/sohu/ddd.jpg" alt="">
 					</a>
+					<div class="blackmask"></div>
+					<h3>外媒曝比伯海莉二月举行婚礼 已经发送邀请函</h3>
 				</li>
 				<li>
 					<a href="">
 						<img src="images/sohu/eee.jpg" alt="">
 					</a>
+					<div class="blackmask"></div>
+					<h3>董璇财产风波后晒女儿正面照，被赞美人胚子惹人爱</h3>
 				</li>
 			</ul>
 		</div>
@@ -132,7 +152,7 @@
 	<!-- 行为 -->
 	<script type="text/javascript">
 		var leftBtn = document.getElementById("leftBtn");
-		var leftBtn = document.getElementById("rightBtn");
+		var rightBtn = document.getElementById("rightBtn");
 		var cirList = document.getElementById("circels").getElementsByTagName("li");
 		var imagesList = document.getElementById("imagesList").getElementsByTagName("li");
 
@@ -147,13 +167,33 @@
 			}
 			change_img();
 		}
-
+		rightBtn.onclick = function(){
+			img_idx++;
+			if(img_idx>imagesList.length-1){
+				img_idx = 0;
+			}
+			change_img();
+		}
+		// 小圆点悬浮批量监听用循环
+		for(var i=0;i<cirList.length;i++){
+			// 编号给属性值
+			cirList[i].index = i;
+			// 行为监听
+			cirList[i].onmouseover = function(){
+				img_idx = this.index;
+				change_img();
+			}
+		}
 		// 换图
 		function change_img(){
 			for(var i=0;i<imagesList.length;i++){
 				imagesList[i].className="";
 			}
-			imagesList[img_idx].className="`current";
+			for(var j=0;j<cirList.length;j++){
+				cirList[j].className = "";
+			}
+			imagesList[img_idx].className="current";
+			cirList[img_idx].className = "current";			
 		}
 	</script>
 
