@@ -82,11 +82,15 @@
         border-radius: 50%;
         background-color: gray;
         margin-right: 20px;
+        cursor: pointer;
+    }
+    .yuandian ol li.current{
+        background-color: brown;
     }
 </style>
 <body>
     <div class="lunboqu">
-        <div class="images">
+        <div class="images" id="imagesList">
             <ul>
 				<li class="current">
 					<a href="">
@@ -124,20 +128,65 @@
 					<h3>董璇财产风波后晒女儿正面照，被赞美人胚子惹人爱</h3>
 				</li>
             </ul>
-            <div class="botton">
-                <span class="leftbtn"></span>
-                <span class="rightbtn"></span>
-            </div>
-            <div class="yuandian">
-                <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-            </div>
+        </div>
+        <div class="botton" id="buttons">
+            <span class="leftbtn"></span>
+            <span class="rightbtn"></span>
+        </div>
+        <div class="yuandian" id="yuandians">
+            <ol>
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
         </div>
     </div>
 </body>
+<script>
+    var imagesList = document.getElementById("imagesList").getElementsByTagName("li");
+    var yuandians = document.getElementById("yuandians").getElementsByTagName("li");
+    var buttons = document.getElementById("buttons").getElementsByTagName("span");
+
+    var id = 0;
+
+    function change(){
+        for(var i=0;i<imagesList.length;i++){
+            imagesList[i].className = "";
+        }
+        
+        for(var j=0;j<yuandians.length;j++){
+            yuandians[j].className = "";
+        }
+        imagesList[id].className = "current";
+        yuandians[id].className = "current";
+    }
+
+    buttons[0].onclick = function(){
+        id--;
+        if(id < 0){
+            id = imagesList.length - 1;
+        }
+        change();
+    }
+    buttons[1].onclick = function(){
+        id++;
+        if(id > imagesList.length-1){
+            id = 0;
+        }
+        change();
+    }
+
+    for(var i=0;i<yuandians.length;i++){
+        yuandians[i].index = i;
+        yuandians[i].onmouseover = function(){                           
+            id = this.index;
+            change();
+        }
+    }
+
+ 
+</script>
+
 </html>
