@@ -178,9 +178,12 @@
         change();
     }
 
+    // 用let定义i时，可以局部生效
     for(var i=0;i<yuandians.length;i++){
         yuandians[i].index = i;
-        yuandians[i].onmouseover = function(){                           
+        console.log('1 === ', yuandians[i]);
+        yuandians[i].onmouseover = function(){
+            console.log(yuandians[i],this);                           
             id = this.index;
             change();
         }
