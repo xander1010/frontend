@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/*div.box{
+			width: 200px;
+			height: 200px;
+			border: 10px solid red;
+			border-top-color: blue;
+		}
+		div.inner{
+			height: 190px;
+			border:10px solid red;
+			border-top: none;
+		}*/
+
+
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.tab{
+			margin:100px;
+			width: 310px;
+			border-top: 2px solid #206f96;
+		}
+		.tab .hd{
+			overflow: hidden; 
+		}
+		.tab .hd span{
+			float: left;
+			width: 102px;
+			height:20px;
+			border-left: 1px solid #cfcfcf;
+			border-bottom: 1px solid #cfcfcf;
+			background-color: #efefef;
+			text-align: center;
+			line-height: 20px;
+			font-size: 14px;
+			font-family: "SimSun";
+		}
+		.tab .hd span.last{
+			border-right: 1px solid #cfcfcf;
+		}
+		.tab .hd span.current{
+			border-bottom-color: white;
+			background-color: white;
+			font-weight: bold;
+		}
+		.tab .hd span a{
+			text-decoration: none;
+			color: #252525;
+		}
+		.tab .hd span a:hover{
+			color: red;
+			text-decoration: underline;
+		}
+		.tab .bd{
+			padding-top: 15px;
+			padding-left: 8px;
+		}
+		.tab .bd ul{
+			list-style: none;
+		}
+		.tab .bd ul li{
+			font:14px/27px "SimSun";
+		}
+		.tab .bd ul li a{
+			text-decoration: none;
+			color: #252525;
+		}
+		.tab .bd ul li.headline a{
+			font-weight: bold;
+		}
+		.tab .bd ul li a:hover{
+			color: red;
+			text-decoration: underline;
+		}
+
+        div.bd div{
+            display: none;
+        }
+        div.bd .current{
+            display: block;
+        }
+	</style>
+</head>
+<body>
+<!-- 	<div class="box">
+		<div class="inner">用两层例子来描边，外层只要上，内层描三边就可以让最上面的线成正常的直线加粗</div>
+	</div> -->
+
+	<div class="tab">
+		<div class="hd" id="tabhd">
+			<span class="current"><a href="#">新闻</a></span>
+			<span><a href="#">图片</a></span>
+			<span class="last"><a href="#">军事</a> <a href="#">航空</a></span>
+		</div>
+		<div class="bd" id="tabbd">
+            <div class="current">
+                <ul>
+                    <li class="headline"><a href="#">公民在加纳发生枪击案致2死1伤 目前在逃</a></li>
+                    <li><a href="#">佩奥要拉美对中国援助"睁大眼睛" 中方这样回应</a></li>
+                    <li><a href="#">管理法修正草案提审 拟重罚生产销售假药行为</a></li>
+                    <li><a href="#">铁列车出轨事故死伤者多为孩童 有母子相拥遇难</a></li>
+                    <li><a href="#">美国四大权威部门称中俄伊干涉中期选举 </a></li>
+                </ul>
+            </div>
+            <div>
+                <img src="" alt="图片加载中..">                
+                <p>图片</p>
+                <p>图片</p>
+                <p>图片</p>
+            </div>
+            <div>
+                <p>军事新闻</p>
+                <p>军事新闻</p>
+                <p>军事新闻</p>
+                <p>军事新闻</p>
+            </div>
+		</div>
+	</div>
+
+
+<script>
+    var tablist = document.getElementById("tabhd").getElementsByTagName("span");
+    var bdlist = document.getElementById("tabbd").getElementsByTagName("div");
+
+    for(var i=0;i<tablist.length;i++){
+        (function(i){
+            tablist[i].onmouseover = function(){
+                for(var j=0;j<tablist.length;j++){ 
+                     tablist[j].className="";  
+                }
+                tablist[tablist.length-1].className = "last";                
+                tablist[i].className = "current";
+               
+
+                for(var d=0;d<bdlist.length;d++){
+                    bdlist[d].className="";
+                }
+                bdlist[i].className="current";
+            }
+        })(i);
+    }
+    
+
+    
+</script>
+
+</body>
+</html>
