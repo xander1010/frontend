@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            background-position: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        var oDiv = document.getElementsByTagName("div")[0];
+
+        var aa = window.getComputedStyle(oDiv).getPropertyValue("width");
+        // 可以简写
+        var a = getComputedStyle(oDiv)["width"];
+        var b = getComputedStyle(oDiv)["font-size"];
+
+        // 在IE8以下不兼容上面的方法,后面的属性用驼峰规则得到
+        // var c = oDiv.currentStyle.paddingLeft;
+        // var d = oDiv.currentStyle["height"];
+
+        // 可以用能力检测，兼容性写法，兼容高级和IE8以下浏览器
+        if(window.getComputedStyle){
+            alert(getComputedStyle(oDiv)["width"]);
+        }else{
+            alert(oDiv.currentStyle.width);
+        }
+
+        // 编写函数，得到计算后样式，兼容多种写法
+        function fetchComputedStyle(obj,proterty){
+            
+        } 
+
+    </script>
+</body>
+</html>
