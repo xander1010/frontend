@@ -38,7 +38,18 @@
 
         // 编写函数，得到计算后样式，兼容多种写法
         function fetchComputedStyle(obj,proterty){
-            
+            if(window.getComputedStyle){
+                // 用正则转换一下
+                proterty = propterty.replace(/([A-Z])/g,function(match,$1){
+                    return "-" + $1.toLowerCase();
+                });
+                return getComputedStyle(obj)[proterty];
+            }else{
+                propterty = propterty.replace(/-([a-z])/g,function(match,$1){
+                    return $1.toUpperCase();
+                });
+                return obj.currentStyle[propterty];
+            }
         } 
 
     </script>
