@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 500px;
+            height: 300px;
+            padding: 50px;
+            border: 10px solid red;
+        }
+        .box2{
+            width: 380px;
+            height: 180px;
+            padding: 50px;
+            border: 10px solid blue;
+        }
+        .box3{
+            width: 260px;
+            height: 60px;
+            padding: 50px;
+            border: 10px solid green;
+            position: relative;
+        }
+        p{
+            width: 40px;
+            height: 40px;
+            background-color: gold;
+            border: 10px solid purple;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+            <div class="box3">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <div class="butn">
+        <input type="button" value="begin">
+        <input type="button" value="rest">
+        <input type="button" value="pause">
+    </div>
+    <script>
+        var op = document.getElementsByTagName("p")[0];
+        // op.offsetLeft
+        // offsetLeft、offsetTop值是number类型的，可以直接参与运算
+
+        var odiv = document.getElementsByTagName("div")[1];
+        // odiv.offsetHeight和
+        // offsetWidth值就是自己的 width+左右padding+左右border的宽度
+
+        // odiv.clientHeight和odiv.clientWidth就是width+padding的值
+
+        // 定时器，setinterval(),两个参数，前动作，后时间
+        window.setInterval(function(){
+            console.log("这里放功能");
+        },50000);
+
+        function fun(){
+            alert("alter");
+        }
+        // 定时器引用函数
+        // window.setInterval(fun,50000);
+
+
+        // 定时器的暂停
+        var obtn = document.getElementsByTagName("input");
+
+        var nowleft = 50;
+       
+        var dingshi;
+
+        obtn[0].onclick = function(){
+            // 避免多次点击，每次先清除上一次定时
+            clearInterval(dingshi);            
+            dingshi = setInterval(function(){
+                nowleft += 2;
+                if(nowleft>720){
+                    nowleft = 720;
+                    clearInterval(dingshi);
+                }
+                op.style.left = nowleft +"px";
+            },20);
+        }
+        // 用clearInterval()暂停
+        obtn[1].onclick =function(){
+            clearInterval(dingshi);
+            nowleft = 10;
+            op.style.left = nowleft +"px";
+        }
+        
+        obtn[2].onclick =function(){
+            clearInterval(dingshi);
+          }
+
+
+    </script>
+</body>
+</html>
