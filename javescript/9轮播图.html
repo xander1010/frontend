@@ -10,132 +10,56 @@
             margin: 0;
             padding: 0;
         }
-        .box1{
-            width: 500px;
-            height: 300px;
-            padding: 50px;
-            border: 10px solid red;
-        }
-        .box2{
-            width: 380px;
-            height: 180px;
-            padding: 50px;
-            border: 10px solid blue;
-        }
-        .box3{
-            width: 260px;
-            height: 60px;
-            padding: 50px;
-            border: 10px solid green;
+        .carousel{
+            width: 665px;
+            height: 442px;
+            border: 1px solid red;
+            margin: 50px auto;
+            overflow: hidden;
             position: relative;
         }
-        p{
-            width: 40px;
-            height: 40px;
-            background-color: gold;
-            border: 10px solid purple;
+        .m_unit{
+            width: 5000px;
+            height: 442px;
             position: absolute;
+            left: 0;
         }
-        .test{
-            width: 80px;
-            height: 80px;
-            background-color: skyblue;
-            position: absolute;
-            top: 123px;
-            left: 186px;
+        .m_unit ul{
+            list-style: none;
+        }
+        .m_unit ul li{
+            float: left;
         }
     </style>
 </head>
 <body>
-    <div class="box1">
-        <div class="box2">
-            <div class="box3">
-                <p></p>
-            </div>
+    <div class="carousel">
+        <div class="m_unit" id="m_unit">
+            <ul>
+                <li><a href=""><img src="images/0.jpg" alt=""></a></li>
+                <li><a href=""><img src="images/1.jpeg" alt=""></a></li>
+                <li><a href=""><img src="images/2.jpeg" alt=""></a></li>
+                <li><a href=""><img src="images/3.jpeg" alt=""></a></li>
+                <li><a href=""><img src="images/4.jpeg" alt=""></a></li>
+                <li><a href=""><img src="images/5.jpeg" alt=""></a></li>
+                <li><a href=""><img src="images/0.jpg" alt=""></a></li>
+            </ul>
         </div>
     </div>
-    <div class="butn">
-        <input type="button" value="begin">
-        <input type="button" value="rest">
-        <input type="button" value="pause">
-    </div>
 
-    <div class="test" id="test"></div>
 
     <script>
-        var op = document.getElementsByTagName("p")[0];
-        // op.offsetLeft
-        // offsetLeft、offsetTop值是number类型的，可以直接参与运算
-
-        var odiv = document.getElementsByTagName("div")[1];
-        // odiv.offsetHeight和
-        // offsetWidth值就是自己的 width+左右padding+左右border的宽度
-
-        // odiv.clientHeight和odiv.clientWidth就是width+padding的值
-
-        // 定时器，setinterval(),两个参数，前动作，后时间
-        window.setInterval(function(){
-            console.log("这里放功能");
-        },50000);
-
-        function fun(){
-            alert("alter");
-        }
-        // 定时器引用函数
-        // window.setInterval(fun,50000);
+        var m_unit = document.getElementById("m_unit");
+        var idx = 0;
 
 
-        // 定时器的暂停
-        var obtn = document.getElementsByTagName("input");
 
-        var nowleft = 50;
-       
-        var dingshi;
-
-        obtn[0].onclick = function(){
-            // 避免多次点击，每次先清除上一次定时
-            clearInterval(dingshi);            
-            dingshi = setInterval(function(){
-                nowleft += 2;
-                if(nowleft>720){
-                    nowleft = 720;
-                    clearInterval(dingshi);
-                }
-                op.style.left = nowleft +"px";
-            },20);
-        }
-        // 用clearInterval()暂停
-        obtn[1].onclick =function(){
-            clearInterval(dingshi);
-            nowleft = 10;
-            op.style.left = nowleft +"px";
-        }
         
-        obtn[2].onclick =function(){
-            clearInterval(dingshi);
-          }
-
-        // JSON
-        var obj = {
-	        "name":"考拉", 
-	        "age" : 18
-        };
-        // 添加属性
-        obj.sex = "刚变完性";
-        // 删除属性
-        delete obj.age;
-
-        // 用for--in来遍历JSON的属性
-        for(var k in obj){
-    	    console.log(k + "的值是" + obj[k]);
-        }
 
 
-        var otest = document.getElementById("test");
 
-        animate(otest,{"left":700,"top":350},2000);
 
-        // 定义函数,封装运动框架
+        // 运动函数
         function animate(elem,targetjson,time){
             // 1.生成信号量
             var semaphore = {};
@@ -204,7 +128,6 @@
                 }
             } 
         }
-
 
     </script>
 </body>

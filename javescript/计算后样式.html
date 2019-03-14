@@ -40,7 +40,7 @@
         function fetchComputedStyle(obj,proterty){
             if(window.getComputedStyle){
                 // 用正则转换一下
-                proterty = propterty.replace(/([A-Z])/g,function(match,$1){
+                proterty = proterty.replace(/([A-Z])/g,function(match,$1){
                     return "-" + $1.toLowerCase();
                 });
                 return getComputedStyle(obj)[proterty];
@@ -48,7 +48,7 @@
                 propterty = propterty.replace(/-([a-z])/g,function(match,$1){
                     return $1.toUpperCase();
                 });
-                return obj.currentStyle[propterty];
+                return obj.currentStyle[proterty];
             }
         } 
 
